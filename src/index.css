@@ -2,9 +2,9 @@
   margin-bottom: 0!important;
 }
 body {
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  
-  background: linear-gradient(to right, #004e92, #000428); 
+  background: #000428;  
+  background: -webkit-linear-gradient(to right, #004e92, #280000);  
+  background: linear-gradient(to right, #c94b4b, #4b134f); 
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -40,7 +40,7 @@ h1 {
 h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  color:#004e92;
+  color:#946363;
   margin-bottom:30px;
   font-size:3rem!important;
   text-align: center;
