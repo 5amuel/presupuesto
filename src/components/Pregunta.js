@@ -24,13 +24,10 @@ const Pregunta = ({guardarPresupuesto, guardarRestante,  actualizarPregunta}) =>
         guardarCantidad(cantidad);
         guardarRestante(cantidad);
         actualizarPregunta(false);
-
-
     }
     return ( 
         <Fragment>
             <h2>Introducir Presupuesto</h2>
-
             {error ? <Error mensaje="El presupuesto no es Valido" />  : null}
             <form
                 onSubmit={agregarPresupuesto}

@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 
 
 const Formulario = () => {
+
+    const [nombre, guarrdarNombre] = useState('');
+    const [cantidad, guarrdarCantidad] = useState(0);
     return ( 
         <form>
             <h2>Agregar gastos aqui</h2>
