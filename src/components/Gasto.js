@@ -8,5 +8,4 @@ const Gasto = ({gasto}) => (
         </p>
     </li>
 )
- 
 export default Gasto;

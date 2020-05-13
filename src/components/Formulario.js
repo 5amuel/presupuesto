@@ -34,14 +34,12 @@ const Formulario = ({agregarNuevoGasto}) => {
         //Resetear el formulario
         guardarNombre('');
         guardarCantidad(0);
-        
     }
 
     return ( 
         <form
             onSubmit={agregarGasto}
         >
-
             <h2>Agregar gastos aqui</h2>
             {error ? <Error mensaje="Ambos campos son obligatorios o Presupuesto incorrecto" /> : null}
 
@@ -75,5 +73,4 @@ const Formulario = ({agregarNuevoGasto}) => {
 
      );
 }
- 
 export default Formulario;

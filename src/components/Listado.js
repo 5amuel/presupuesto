@@ -12,6 +12,4 @@ const Listado = ({gastos}) => (
         ))}
     </div>
 );
-
-
 export default Listado;
