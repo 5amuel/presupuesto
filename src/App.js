@@ -9,8 +9,12 @@ function App() {
 
   //State condicional para mostrar u ocultar pregunta
   const [mostrarpregunta, actualizarPregunta] = useState(true)
+  const [gastos, guardarGasto] = useState([]);
 
-
+  //Funcion para agregar nuevo gasto al array
+  const agregarNuevoGasto = gasto => {
+    console.log(gasto);
+  }
   return (
     <div className="container">
       <header>
@@ -29,7 +33,9 @@ function App() {
             (
               <div className="row">
                 <div className="one-half column">
-                  <Formulario/>
+                  <Formulario
+                    agregarNuevoGasto={agregarNuevoGasto}
+                  />
                 </div>
                 <div className="one-half column">
                   2
@@ -37,9 +43,6 @@ function App() {
               </div>
             )
           }
-          
-          
-
         </div>  
       </header>
     </div>

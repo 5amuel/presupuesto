@@ -1,27 +1,65 @@
 import React, {useState} from 'react';
+import Error from './Error';
+import shortid from 'shortid';
 
+const Formulario = ({agregarNuevoGasto}) => {
 
-const Formulario = () => {
+    const [nombre, guardarNombre] = useState('');
+    const [cantidad, guardarCantidad] = useState(0);
+    const [error, guardarError] = useState(false);
+    
 
-    const [nombre, guarrdarNombre] = useState('');
-    const [cantidad, guarrdarCantidad] = useState(0);
+    const extraerCantidad = e =>{
+        guardarCantidad(parseInt(e.target.value));
+    }
+
+    // Agregar gasto de usuario
+    const agregarGasto = e => {
+        e.preventDefault();
+        //validacion
+        if(cantidad < 1 || isNaN(cantidad) || nombre.trim() === ''){
+            guardarError(true);
+            return;
+        }
+        guardarError(false);
+        //Construir el gasto
+        const gasto = {
+            nombre,
+            cantidad,
+            id: shortid.generate()
+        }
+        console.log(gasto)
+        // Pasar el gasto al componente principal
+        agregarNuevoGasto(gasto);
+        //Resetear el formulario
+    }
+
     return ( 
-        <form>
+        <form
+            onSubmit={agregarGasto}
+        >
+
             <h2>Agregar gastos aqui</h2>
+            {error ? <Error mensaje="Ambos campos son obligatorios o Presupuesto incorrecto" /> : null}
+
             <div className="campo">
                 <label>Descripcion</label>
                 <input
                     type="text"
                     className="u-full-width"
                     placeholder="Ej. Transporte"
+                    value={nombre}
+                    onChange={e => guardarNombre(e.target.value)}
                 />
             </div>
             <div className="campo">
                 <label>Cantidad</label>
                 <input
-                    type="text"
+                    type="number"
                     className="u-full-width"
-                    placeholder="Ej. 300"
+                    placeholder="Coloca tu gasto"
+                    // value={cantidad}
+                    onChange={extraerCantidad}
                 />
             </div>
             <input
