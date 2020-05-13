@@ -13,7 +13,9 @@ function App() {
 
   //Funcion para agregar nuevo gasto al array
   const agregarNuevoGasto = gasto => {
-    console.log(gasto);
+    guardarGasto([
+      ...gastos, gasto
+    ])
   }
   return (
     <div className="container">
