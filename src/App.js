@@ -27,7 +27,7 @@ function App() {
       //resetear a false
       guardarCrearGasto(false);
     }
-  }, [gasto]);
+  }, [gasto, creargasto, gastos, restante]);
 
   //Funcion para agregar nuevo gasto al array
   // const agregarNuevoGasto = gasto => {
